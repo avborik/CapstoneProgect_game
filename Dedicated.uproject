@@ -1,13 +1,16 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{45CB5BD2-44D1-F1C2-0670-28893C7A3384}",
+	"EngineAssociation": "{3408AE60-4568-E78B-2F44-58B839578CD9}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "Dedicated",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	]
 }
