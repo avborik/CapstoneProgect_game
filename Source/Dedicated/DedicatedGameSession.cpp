@@ -10,7 +10,7 @@ void ADedicatedGameSession::RegisterServer()
 	IOnlineSessionPtr SessionInt = Online::GetSessionInterface(World);
 
 	FOnlineSessionSettings Settings;
-	Settings.NumPublicConnections = 20;
+	Settings.NumPublicConnections = 6;
 	Settings.bShouldAdvertise = true;
 	Settings.bAllowJoinInProgress = true;
 	Settings.bIsLANMatch = true;
