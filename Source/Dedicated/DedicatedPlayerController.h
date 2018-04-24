@@ -13,8 +13,7 @@ UCLASS()
 class DEDICATED_API ADedicatedPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-	
+
 	
 	
 };

@@ -2,6 +2,23 @@
 
 #include "DedicatedPlayerState.h"
 
+void ADedicatedPlayerState::SetPlayerName(const FString& S)
+{
+	SetPlayerNameInternal(S);
 
+	// RepNotify callback won't get called by net code if we are the server
+	ENetMode NetMode = GetNetMode();
+	if (NetMode == NM_Standalone || NetMode == NM_ListenServer)
+	{
+		OnRep_PlayerName();
+	}
+
+	OldNamePrivate = GetPlayerName();
+	PRAGMA_DISABLE_DEPRECATION_WARNINGS;
+	OldName = OldNamePrivate;
+	PRAGMA_ENABLE_DEPRECATION_WARNINGS;
+
+	ForceNetUpdate();
+}
 
 

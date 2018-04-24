@@ -13,6 +13,11 @@ class ADedicatedGameMode : public AGameModeBase
 
 public:
 	ADedicatedGameMode();
+	FString InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId, const FString& Options, const FString& Portal);
+
+	//UFUNCTION(BlueprintNativeEvent, Category = "Test")
+	//	void ChangeName(AController* Other, const FString& S, bool bNameChange);
+
 };
 
 
