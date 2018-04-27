@@ -21,4 +21,14 @@ void ADedicatedPlayerState::SetPlayerName(const FString& S)
 	ForceNetUpdate();
 }
 
+void ADedicatedPlayerState::SetPlayerNetID(int32 newID)
+{
+	PlayerId = newID;
+}
+
+void ADedicatedPlayerState::SetPlayerNetIDFromString(FString newID)
+{
+	SetPlayerNetID(FCString::Atoi(*newID));
+}
+
 

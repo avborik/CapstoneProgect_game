@@ -18,8 +18,13 @@ class DEDICATED_API ADedicatedPlayerState : public APlayerState
 	FString OldNamePrivate;
 	
 
-	UFUNCTION(BlueprintCallable, Category=Player)
+	UFUNCTION(BlueprintCallable, Category= "Player")
 	void SetPlayerName(const FString& S);
-	
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void SetPlayerNetID(int32 newID);
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void SetPlayerNetIDFromString(FString newID);
 	
 };
