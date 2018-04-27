@@ -14,6 +14,6 @@ class DEDICATED_API ADedicatedPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-	
+		//void ClientTravel(const FString& URL, ETravelType TravelType, bool bSeamless, FGuid MapPackageGuid);
 	
 };
