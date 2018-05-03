@@ -18,7 +18,10 @@ public:
 
 	UInventoryCPP();
 
-	//bool IsNameStableForNetworking() const override;
+	bool IsNameStableForNetworking() const override
+	{
+		return true;
+	}
 
 	bool IsSupportedForNetworking() const override
 	{
