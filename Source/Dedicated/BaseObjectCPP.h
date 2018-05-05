@@ -4,7 +4,23 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "UnrealNetwork.h"
 #include "BaseObjectCPP.generated.h"
+
+USTRUCT(BlueprintType)
+struct FImageContainer
+{
+	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UTexture2D * Image;
+
+	FImageContainer()
+	{
+		Image = nullptr;
+	}
+
+};
 
 UCLASS(BlueprintType)
 class DEDICATED_API ABaseObjectCPP : public AActor
@@ -13,7 +29,28 @@ class DEDICATED_API ABaseObjectCPP : public AActor
 	
 public:	
 	// Sets default values for this actor's properties
-	ABaseObjectCPP();
+	ABaseObjectCPP(const FObjectInitializer& ObjectInitializer);
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		int ObjectID;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		FString ObjectName;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		bool IsStackable;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		int MaxStackSize;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		float Weight;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		FImageContainer ImageContainer;
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,6 +60,5 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
 	
 };

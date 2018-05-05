@@ -4,9 +4,12 @@
 
 
 // Sets default values
-ABaseInventoryCPP::ABaseInventoryCPP()
+ABaseInventoryCPP::ABaseInventoryCPP(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	bReplicates = true;
+	bOnlyRelevantToOwner = true;
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "UnrealNetwork.h"
 #include "BaseObjectCPP.h"
 #include "BaseInventoryCPP.generated.h"
 
@@ -12,11 +13,18 @@ struct FInventoryStruct
 {
 	GENERATED_USTRUCT_BODY()
 
-	UPROPERTY()
-	ABaseObjectCPP * Item;
+	UPROPERTY(BlueprintReadWrite)
+	TSubclassOf<ABaseObjectCPP> ItemType;
 	
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	int StackCount;
+
+	FInventoryStruct()
+	{
+		ItemType = nullptr;
+		StackCount = 0;
+	}
+
 };
 
 UCLASS(BlueprintType)
@@ -25,8 +33,9 @@ class DEDICATED_API ABaseInventoryCPP : public AActor
 	GENERATED_BODY()
 	
 public:	
+
 	// Sets default values for this actor's properties
-	ABaseInventoryCPP();
+	ABaseInventoryCPP(const FObjectInitializer& ObjectInitializer);
 
 protected:
 	// Called when the game starts or when spawned
