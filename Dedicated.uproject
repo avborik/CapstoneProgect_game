@@ -19,5 +19,9 @@
 			"Name": "OnlineSubsystemSteam",
 			"Enabled": true
 		}
+	],
+	"TargetPlatforms": [
+		"AllDesktop",
+		"WindowsNoEditor"
 	]
 }
