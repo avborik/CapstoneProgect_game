@@ -13,8 +13,18 @@ UCLASS()
 class DEDICATED_API ADedicatedPlayerState : public APlayerState
 {
 	GENERATED_BODY()
+
+	/** Previous player name.  Saved on client-side to detect player name changes. */
+	FString OldNamePrivate;
 	
-	
-	
+
+	UFUNCTION(BlueprintCallable, Category= "Player")
+	void SetPlayerName(const FString& S);
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void SetPlayerNetID(int32 newID);
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void SetPlayerNetIDFromString(FString newID);
 	
 };
