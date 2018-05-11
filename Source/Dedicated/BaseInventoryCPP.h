@@ -3,9 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "UnrealNetwork.h"
-#include "BaseObjectCPP.h"
+//#include "GameFramework/Actor.h"
+//#include "UnrealNetwork.h"
 #include "BaseInventoryCPP.generated.h"
 
 USTRUCT(BlueprintType)
@@ -14,7 +13,7 @@ struct FInventoryStruct
 	GENERATED_USTRUCT_BODY()
 
 	UPROPERTY(BlueprintReadWrite)
-	TSubclassOf<ABaseObjectCPP> ItemType;
+	TSubclassOf<class ABaseObjectCPP> ItemType;
 	
 	UPROPERTY(BlueprintReadWrite)
 	int StackCount;
