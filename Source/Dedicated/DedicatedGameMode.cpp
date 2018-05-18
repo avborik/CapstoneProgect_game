@@ -42,7 +42,7 @@ ADedicatedGameMode::ADedicatedGameMode()
 	}
 }
 
-FString ADedicatedGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId, const FString& Options, const FString& Portal)
+/*FString ADedicatedGameMode::InitNewPlayer(APlayerController* NewPlayerController, const FUniqueNetIdRepl& UniqueId, const FString& Options, const FString& Portal)
 {
 	/*PRAGMA_DISABLE_DEPRECATION_WARNINGS
 		// Try calling deprecated version first
@@ -52,7 +52,7 @@ FString ADedicatedGameMode::InitNewPlayer(APlayerController* NewPlayerController
 		// This means it was implemented in subclass
 		return DeprecatedError;
 	}
-	PRAGMA_ENABLE_DEPRECATION_WARNINGS*/
+	PRAGMA_ENABLE_DEPRECATION_WARNINGS*//*
 
 		check(NewPlayerController);
 
@@ -96,7 +96,7 @@ FString ADedicatedGameMode::InitNewPlayer(APlayerController* NewPlayerController
 	ChangeName(NewPlayerController, InName, false);
 
 	return ErrorMessage;
-}
+}*/
 
 /*void ADedicatedGameMode::ChangeName(AController* Other, const FString& S, bool bNameChange)
 {
