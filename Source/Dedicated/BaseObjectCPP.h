@@ -39,6 +39,9 @@ public:
 		FString ObjectName;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		float Cost;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
 		bool IsStackable;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)

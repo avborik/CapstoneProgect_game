@@ -22,7 +22,8 @@ void ABaseObjectCPP::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLi
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(ABaseObjectCPP, ObjectID);
-	DOREPLIFETIME(ABaseObjectCPP, ObjectName);
+	DOREPLIFETIME(ABaseObjectCPP, ObjectName);	
+	DOREPLIFETIME(ABaseObjectCPP, Cost);
 	DOREPLIFETIME(ABaseObjectCPP, IsStackable);
 	DOREPLIFETIME(ABaseObjectCPP, MaxStackSize);
 	DOREPLIFETIME(ABaseObjectCPP, Weight);
