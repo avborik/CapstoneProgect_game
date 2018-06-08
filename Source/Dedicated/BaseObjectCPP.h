@@ -42,6 +42,9 @@ public:
 		float Cost;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
+		int Experience;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
 		bool IsStackable;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Replicated)
